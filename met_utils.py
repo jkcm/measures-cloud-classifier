@@ -75,7 +75,8 @@ def calculate_EIS(t_1000, t_850, t_700, z_1000, z_700, r_1000):
     
     returns: estimated inversion strength (EIS) in Kelvin
     """
-    r_1000[r_1000>100] = 100  # ignoring supersaturation for lcl calculation
+    if hasattr(r_1000, '__iter__'):
+        r_1000[r_1000>100] = 100  # ignoring supersaturation for lcl calculation
     t_dew = t_1000-(100-r_1000)/5
     lcl = calculate_LCL(t=t_1000, t_dew=t_dew, z=z_1000)
     lts = calculate_LTS(t_700=t_700, t_1000=t_1000)
@@ -114,6 +115,17 @@ def calc_EIS_from_ERA5(ERA_data, add_to_dataset=False):
                       "units": "K",
                       "_FillValue": "NaN"})
     return eis
+
+def density_from_p_Tv(p, Tv):
+    return p/(Rdry*Tv)
+
+
+def get_liquid_water_theta(temp, theta, q_l):
+    """temp = air temp (K) theta = pot temp, q_l = liquid water MR"""
+    theta_l = theta - (theta*lv*q_l/(temp*cp*1000))
+    return theta_l
+
+
 
 
 if __name__ == "__main__":
