@@ -4,21 +4,22 @@ Created on Fri Nov 16 12:42:46 2018
 
 @author: jkcm
 """
+from __future__ import division
 import numpy as np
 
 ######################################
 ### CONSTANTS ###
 ######################################
-p0 = 1000.  # reference pressure, hPa
-Rdry = 287.  # gas const for dry air, J/K/kg
-Rvap = 461.  # gas const for water vapor, J/K/kg
+p0 = 1000.0  # reference pressure, hPa
+Rdry = 287.0  # gas const for dry air, J/K/kg
+Rvap = 461.0  # gas const for water vapor, J/K/kg
 eps = Rvap/Rdry - 1
-cp = 1004.  # cp_dry, specific heat of dry air at const pressure, J/K/kg
+cp = 1004.0  # cp_dry, specific heat of dry air at const pressure, J/K/kg
 g = 9.81   # grav acceleration at sea level, m/s2
 lv = 2.5*10**6  # latent heat of vaporization at 0C, J/kg
 
 
-def theta_from_p_t(p, t, p0=1000):
+def theta_from_p_t(p, t, p0=1000.0):
     """calculate potential temperature from pressure, temperature
     p: pressure in hPa
     t: temperature in Kelvin
@@ -49,11 +50,11 @@ def calculate_LTS(t_700, t_1000):
     
     returns: lower tropospheric stability in Kelvin
     """
-    theta_700 = theta_from_p_t(p=700, t=t_700)
+    theta_700 = theta_from_p_t(p=700.0, t=t_700)
     lts = theta_700-t_1000
     return lts
     
-def calculate_LCL(t, t_dew, z=0):
+def calculate_LCL(t, t_dew, z=0.0):
     """calculate lifting condensation level from temperature, dew point, and altitude
     t: temperature in Kelvin
     t_dew: dew point temperature in Kelvin
@@ -77,7 +78,7 @@ def calculate_EIS(t_1000, t_850, t_700, z_1000, z_700, r_1000):
     """
     if hasattr(r_1000, '__iter__'):
         r_1000[r_1000>100] = 100  # ignoring supersaturation for lcl calculation
-    t_dew = t_1000-(100-r_1000)/5
+    t_dew = t_1000-(100-r_1000)/5.0
     lcl = calculate_LCL(t=t_1000, t_dew=t_dew, z=z_1000)
     lts = calculate_LTS(t_700=t_700, t_1000=t_1000)
     gamma_850 = calculate_moist_adiabatic_lapse_rate(t=t_850, p=850)
@@ -122,7 +123,7 @@ def density_from_p_Tv(p, Tv):
 
 def get_liquid_water_theta(temp, theta, q_l):
     """temp = air temp (K) theta = pot temp, q_l = liquid water MR"""
-    theta_l = theta - (theta*lv*q_l/(temp*cp*1000))
+    theta_l = theta - (theta*lv*q_l/(temp*cp*1000.0))
     return theta_l
 
 
