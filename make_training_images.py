@@ -40,6 +40,7 @@ def cloud_fraction(i,j,CM,CTH,high_thresh=4000,low_thresh=3000):
     return high_cf,low_cf
 
 def read_MODIS_level2_data(MOD06_file,MOD03_file,MOD02_file):
+    #Adapted from code written by Hua Song
     print('reading the cloud mask from MOD06_L2 product')
     print(MOD06_file)    
     MOD06 = Dataset(MOD06_file, 'r')
