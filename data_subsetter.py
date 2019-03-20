@@ -69,7 +69,6 @@ def subsample_from_directory(root_directory):
 
     for folder in all_regions_and_seasons_dirs:
         print('working on ' + folder)
-        os.makedirs(os.path.join(new_root_directory, folder))
         manifest_file = os.path.join(root_directory, folder, folder+'_manifest_corrected.csv')
         manifest = pd.read_csv(manifest_file)
         manifest['granule'] = [i[:22] for i in manifest['name']]
@@ -80,7 +79,7 @@ def subsample_from_directory(root_directory):
         #creating new manifest from subselection
         new_manifest = make_new_manifest(manifest, unique_granules)
         print('writing manifest...')
-
+        os.makedirs(os.path.join(new_root_directory, folder))
         new_manifest.to_csv(os.path.join(new_root_directory, folder, folder+'_manifest.csv'), index=False)
 
         #copying over files
