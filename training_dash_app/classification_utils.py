@@ -20,7 +20,8 @@ def annotations_parser_v3271(annotation_string):
         'Too much sun glint': 'bad_sun_glint',
         'Too much \'bowtie\' (striping from high viewing angle)': 'bad_bowtie',
         'Other cloud type, not in previous list.': 'bad_other',
-        'Polar (sea ice\/night time)': 'bad_polar'}
+        'Other cloud type, not in previous list,': 'bad_other',
+        'Polar (sea ice/night time)': 'bad_polar'}
     parsed_dict = {x['task']: x['value'] for x in ast.literal_eval(annotation_string)}
     if parsed_dict['T0'] == "Other/no dominant type/can't tell":
         if not parsed_dict['T2']:
