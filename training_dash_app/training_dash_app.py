@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-deploy=False
+deploy=True
 
 import dash
 import dash_core_components as dcc
