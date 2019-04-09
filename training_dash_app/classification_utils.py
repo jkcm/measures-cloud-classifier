@@ -7,6 +7,13 @@ import datetime as dt
 
 test_classification_file = r'/home/disk/eos4/jkcm/Data/MEASURES/zooniverse/classification_datasets/classify_128km-classifications_2019-03-28.csv'
 
+def subject_data_parser(str):
+    str = str.replace('null', 'None')
+    parsed_dict =  ast.literal_eval(str)
+    assert len(parsed_dict.keys()) == 1
+    return list(parsed_dict.values())[0]
+
+
 def annotations_parser_v3271(annotation_string):
     annotation_string = annotation_string.replace('"value":null}', '"value":"Other cloud type, not in previous list."}')
     label_map = {
@@ -55,9 +62,11 @@ def count_number_of_classifications(data):
         class_count[label] = sum(data['label'].values == label)
     return class_count
 
-def read_and_parse_classifications(csv_file, annotations_parser=annotations_parser):
+def read_and_parse_classifications(csv_file, annotations_parser=annotations_parser, parse_subject_data=False):
     columns_to_ignore = ['gold_standard', 'expert', 'metadata', 'user_ip']
     data = pd.read_csv(csv_file).drop(columns=columns_to_ignore)
     data = data.drop(index=np.nonzero(data['workflow_version'].values<32.71)[0])
     data['label'] = [annotations_parser(i) for i in data['annotations'].values]
+    if parse_subject_data:
+        data['subject_data'] = [subject_data_parser(i) for i in data['subject_data'].values]
     return data
