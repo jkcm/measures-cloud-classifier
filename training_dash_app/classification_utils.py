@@ -2,7 +2,6 @@
 import pandas as pd
 import ast
 import numpy as np
-import matplotlib.pyplot as plt
 import datetime as dt
 
 test_classification_file = r'/home/disk/eos4/jkcm/Data/MEASURES/zooniverse/classification_datasets/classify_128km-classifications_2019-03-28.csv'
