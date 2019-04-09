@@ -21,6 +21,7 @@ else:
 
 app.title = 'CUMULO Training Tracker | Dash'
 
+classification_file = ('classify_128km-classifications.csv')
 data = utils.read_and_parse_classifications(utils.test_classification_file, annotations_parser=utils.tidy_parser)
 users = list(set(data.user_name.values))
 

@@ -6,6 +6,7 @@ import datetime as dt
 
 test_classification_file = r'/home/disk/eos4/jkcm/Data/MEASURES/zooniverse/classification_datasets/classify_128km-classifications_2019-03-28.csv'
 
+
 def subject_data_parser(str):
     str = str.replace('null', 'None')
     parsed_dict =  ast.literal_eval(str)
