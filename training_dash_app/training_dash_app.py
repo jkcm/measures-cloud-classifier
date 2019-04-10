@@ -1,12 +1,13 @@
 # -*- coding: utf-8 -*-
 
-deploy=True
+deploy=False
 
 import dash
 import dash_core_components as dcc
 import dash_html_components as html
 from dash.dependencies import Input, Output
 import plotly.graph_objs as go
+import os
 
 import pandas as pd
 import classification_utils as utils
@@ -15,7 +16,8 @@ import classification_utils as utils
 if deploy:
     from flask import Flask
     server = Flask(__name__)
-    app = dash.Dash('Cloud classification training', server=server)
+    server.secret_key = os.environ.get('secret_key', 'secret')
+    app = dash.Dash(__name__, server=server)
 else:        
     app = dash.Dash('Cloud classification training')
 
@@ -83,7 +85,7 @@ def user_graph_callback(text_input):
                 'data': [
                     go.Bar(
                         x=user_counts.index.values,
-                        y=user_counts.values,
+                        y=user_counts.values/sum(user_counts.values),
 #                         text=df[df['continent'] == i]['country'],
 #                         mode='markers',
 #                         opacity=0.7,
@@ -96,7 +98,7 @@ def user_graph_callback(text_input):
                 ],
                 'layout': go.Layout(
 #                     xaxis={'type': 'log', 'title': 'GDP Per Capita'},
-                    yaxis={'title': '# of classifications'},
+                    yaxis={'title': 'frac. of classifications'},
                     margin={'l': 40, 'b': 160, 't': 10, 'r': 100},
                     legend={'x': 0, 'y': 1},
 #                     hovermode='closest'
@@ -106,8 +108,10 @@ def user_graph_callback(text_input):
 
 if __name__ == '__main__':
     
-    if deploy:
-        app.run_server()
-    else:
-        app.run_server(debug=True)
+#     if deploy:
+#         pass
+# #         app.run_server()
+#     else:
+
+    app.run_server(debug=True)
 
