@@ -58,7 +58,7 @@ app.layout = html.Div([
         html.Div([
             html.H3('Summary Statistics', style=text_style),
             html.P('Total progress on generation classification training data', style=text_style),
-            dcc.Graph(figure=overview_figure),
+            dcc.Graph(id='summary_graph', figure=overview_figure),
         ], style={'width':  '49%', 'vertical-align': 'top', 'display': 'inline-block'}),
     
     
