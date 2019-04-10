@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-deploy=False
+deploy=True
 
 import dash
 import dash_core_components as dcc
@@ -8,7 +8,7 @@ import dash_html_components as html
 from dash.dependencies import Input, Output
 import plotly.graph_objs as go
 import os
-
+import sys
 import pandas as pd
 import classification_utils as utils
 
@@ -108,10 +108,9 @@ def user_graph_callback(text_input):
 
 if __name__ == '__main__':
     
-#     if deploy:
-#         pass
-# #         app.run_server()
-#     else:
-
-    app.run_server(debug=True)
-
+    if len(sys.argv) == 1:
+            app.run_server(debug=True)
+    if len(sys.argv) > 1:
+        if sys.argv[1] == 'no_deploy':
+            deploy=False
+            app.run_server(debug=True)
