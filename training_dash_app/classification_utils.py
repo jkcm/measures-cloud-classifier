@@ -28,14 +28,23 @@ def annotations_parser_v3271(annotation_string):
         'Too much \'bowtie\' (striping from high viewing angle)': 'bad_bowtie',
         'Other cloud type, not in previous list.': 'bad_other',
         'Other cloud type, not in previous list,': 'bad_other',
-        'Polar (sea ice/night time)': 'bad_polar'}
-    parsed_dict = {x['task']: x['value'] for x in ast.literal_eval(annotation_string)}
+        'Polar (sea ice/night time)': 'bad_polar',
+        'Scattered convection': 'suppressed_cu',
+        'Mixed': 'bad_other',
+        'Other': 'bad_other',
+        'Lined convection': 'bad_other'}
+    try:
+        parsed_dict = {x['task']: x['value'] for x in ast.literal_eval(annotation_string)}
+    except ValueError:
+        return 'bad_other'
     if parsed_dict['T0'] == "Other/no dominant type/can't tell":
         if not parsed_dict['T2']:
             print('null value!')
             return label_map['Other cloud type, not in previous list.']
         return label_map[parsed_dict['T2']]
     else:
+        if parsed_dict['T0'] not in label_map.keys():
+            return 'bad_other'
         return label_map[parsed_dict['T0']]
 
 def tidy_parser(annotation_string, basic_parser=annotations_parser_v3271):
@@ -50,7 +59,8 @@ def tidy_parser(annotation_string, basic_parser=annotations_parser_v3271):
         'bad_sun_glint': 'Other Issue',
         'bad_bowtie': 'Other Issue',
         'bad_other': 'Other Issue',
-        'bad_polar': 'Other Issue'}
+        'bad_polar': 'Other Issue',
+        'Scattered convection': 'Suppressed Cu'}
     return nice_map[rough_string]
     
     

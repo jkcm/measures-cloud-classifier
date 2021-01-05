@@ -1,0 +1,61 @@
+saving data to /home/disk/eos9/jkcm/Data/modis/MYD021KM/2015/184
+file list downloaded: 288 total possible files
+0.35%      ETA 18:20:22      time left: 0 seconds       already downloaded MYD021KM.A2015184.0000.061.2018050190728.hdf
+0.69%      ETA 18:20:22      time left: 0 seconds       already downloaded MYD021KM.A2015184.0005.061.2018050190729.hdf
+1.04%      ETA 18:20:22      time left: 0 seconds       already downloaded MYD021KM.A2015184.0010.061.2018050190719.hdf
+1.39%      ETA 18:20:22      time left: 0 seconds       already downloaded MYD021KM.A2015184.0015.061.2018050190807.hdf
+1.74%      ETA 18:20:22      time left: 0 seconds       already downloaded MYD021KM.A2015184.0020.061.2018050190802.hdf
+2.08%      ETA 18:20:22      time left: 0 seconds       already downloaded MYD021KM.A2015184.0025.061.2018050190826.hdf
+2.43%      ETA 18:20:22      time left: 0 seconds       already downloaded MYD021KM.A2015184.0030.061.2018050190821.hdf
+2.78%      ETA 18:20:22      time left: 0 seconds       already downloaded MYD021KM.A2015184.0035.061.2018050190831.hdf
+3.12%      ETA 18:20:22      time left: 0 seconds       already downloaded MYD021KM.A2015184.0040.061.2018050190914.hdf
+3.47%      ETA 18:20:22      time left: 0 seconds       already downloaded MYD021KM.A2015184.0045.061.2018050190827.hdf
+3.82%      ETA 18:20:22      time left: 0 seconds       already downloaded MYD021KM.A2015184.0050.061.2018050190830.hdf
+4.17%      ETA 18:20:22      time left: 0 seconds       already downloaded MYD021KM.A2015184.0055.061.2018050190912.hdf
+4.51%      ETA 18:20:22      time left: 0 seconds       already downloaded MYD021KM.A2015184.0100.061.2018050190904.hdf
+4.86%      ETA 18:20:22      time left: 0 seconds       already downloaded MYD021KM.A2015184.0105.061.2018050190855.hdf
+5.21%      ETA 18:20:22      time left: 0 seconds       already downloaded MYD021KM.A2015184.0110.061.2018050190857.hdf
+5.56%      ETA 18:20:22      time left: 0 seconds       already downloaded MYD021KM.A2015184.0115.061.2018050191044.hdf
+5.90%      ETA 18:20:22      time left: 0 seconds       already downloaded MYD021KM.A2015184.0120.061.2018050190832.hdf
+6.25%      ETA 18:20:22      time left: 0 seconds       opening MYD021KM.A2015184.0125.061.2018050190830.hdf, try 1
+nighttime, skipping
+6.60%      ETA 18:21:20      time left: 54 seconds       opening MYD021KM.A2015184.0130.061.2018050190854.hdf, try 1
+nighttime, skipping
+6.94%      ETA 18:28:49      time left: 7.9 minutes       opening MYD021KM.A2015184.0135.061.2018050190850.hdf, try 1
+nighttime, skipping
+7.29%      ETA 18:30:11      time left: 9.1 minutes       opening MYD021KM.A2015184.0140.061.2018050190838.hdf, try 1
+nighttime, skipping
+7.64%      ETA 18:30:40      time left: 9.5 minutes       opening MYD021KM.A2015184.0145.061.2018050190911.hdf, try 1
+nighttime, skipping
+7.99%      ETA 18:31:24      time left: 10.2 minutes       opening MYD021KM.A2015184.0150.061.2018050190841.hdf, try 1
+nighttime, skipping
+8.33%      ETA 18:39:00      time left: 17.1 minutes       opening MYD021KM.A2015184.0155.061.2018050190853.hdf, try 1
+nighttime, skipping
+8.68%      ETA 18:40:51      time left: 18.7 minutes       opening MYD021KM.A2015184.0200.061.2018050190857.hdf, try 1
+nighttime, skipping
+9.03%      ETA 18:45:56      time left: 23.3 minutes       opening MYD021KM.A2015184.0205.061.2018050190937.hdf, try 1
+nighttime, skipping
+9.38%      ETA 18:47:11      time left: 24.3 minutes       already downloaded MYD021KM.A2015184.0210.061.2018050190956.hdf
+9.72%      ETA 18:46:13      time left: 23.3 minutes       already downloaded MYD021KM.A2015184.0215.061.2018050191002.hdf
+10.07%      ETA 18:45:20      time left: 22.4 minutes       already downloaded MYD021KM.A2015184.0220.061.2018050191012.hdf
+10.42%      ETA 18:44:30      time left: 21.6 minutes       already downloaded MYD021KM.A2015184.0225.061.2018050191010.hdf
+10.76%      ETA 18:43:43      time left: 20.8 minutes       already downloaded MYD021KM.A2015184.0230.061.2018050190932.hdf
+11.11%      ETA 18:42:59      time left: 20.1 minutes       already downloaded MYD021KM.A2015184.0235.061.2018050190953.hdf
+11.46%      ETA 18:42:18      time left: 19.4 minutes       already downloaded MYD021KM.A2015184.0240.061.2018050191014.hdf
+11.81%      ETA 18:41:40      time left: 18.8 minutes       already downloaded MYD021KM.A2015184.0245.061.2018050191030.hdf
+12.15%      ETA 18:41:03      time left: 18.2 minutes       already downloaded MYD021KM.A2015184.0250.061.2018050191036.hdf
+12.50%      ETA 18:40:29      time left: 17.6 minutes       opening MYD021KM.A2015184.0255.061.2018050190955.hdf, try 1
+nighttime, skipping
+12.85%      ETA 18:45:02      time left: 21.5 minutes       opening MYD021KM.A2015184.0300.061.2018050191007.hdf, try 1
+nighttime, skipping
+13.19%      ETA 18:46:45      time left: 22.9 minutes       opening MYD021KM.A2015184.0305.061.2018050190920.hdf, try 1
+nighttime, skipping
+13.54%      ETA 18:48:07      time left: 24.0 minutes       opening MYD021KM.A2015184.0310.061.2018050190920.hdf, try 1
+nighttime, skipping
+13.89%      ETA 18:50:15      time left: 25.7 minutes       opening MYD021KM.A2015184.0315.061.2018050191034.hdf, try 1
+nighttime, skipping
+14.24%      ETA 18:52:06      time left: 27.2 minutes       opening MYD021KM.A2015184.0320.061.2018050191048.hdf, try 1
+nighttime, skipping
+14.58%      ETA 18:52:52      time left: 27.8 minutes       opening MYD021KM.A2015184.0325.061.2018050190948.hdf, try 1
+nighttime, skipping
+14.93%      ETA 18:52:49      time left: 27.6 minutes       opening MYD021KM.A2015184.0330.061.2018050190959.hdf, try 1
